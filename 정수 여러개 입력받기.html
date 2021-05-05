@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20191770 이유진 컴퓨터학과 3학년</title>
+</head>
+<body>
+<script>
+    var max=-99999;
+    var min=99999;
+
+    for(x=1;x<=5;x++){
+        var point1=parseInt(prompt( x +'번째 정수를 입력하시오'));
+
+        if(point1>=max){
+            max=point1;
+        }
+        if(point1<=min){
+            min=point1;
+        }
+    }
+
+    document.write('<h1 style="color:red;">'+ '최대값 :'+ max + '</h1>');
+    document.write('<h1 style="color:green;">'+ '최소값 :'+ min + '</h1>');
+</script>
+</body>
+</html>
