@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Travel Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<img src="images/logo.png" id="logo">
+ <div>
+   <p><a id="home" class="menu">Home</a> 
+   <a id="seoul" >Seoul</a>
+   <a id="tokyo"class="menu">tokyo</a>
+   <a id="paris"class="menu">paris</a>
+   </p>
+   </div>
+
+  <img id="photo" src="images/home.png" width="90%">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $('#home').on('click',clickHome); 
+    $('#seoul').on('click',clickSeoul);
+    $('#tokyo').on('click',clickTokyo);
+    $('#paris').on('click',clickParis);
+
+
+    $('#photo').on('mouseenter',mouseEnterPhoto);
+    $('#photo').on('mouseleave',mouseLeavePhoto);
+
+  //jQuary 키보드 이벤트
+    $(document).on('keydown',processKeyEvent); //page 전체
+    function processKeyEvent(event){
+      if (event['key']==='1'){
+        clickHome();
+      }else if (event['key'==='2']){
+        clickSeoul();
+      }
+    }
+
+
+  	//사진을 바꿔주는 함수
+  	function clickSeoul(){
+  		//document.getElementById('photo').src = 'images/seoul.png';
+  		//document.getElementById('seoul').style.fontWeight = 'bold';
+  		//document.getElementById('home').style.fontWeight = 'normal';
+  		//document.getElementById('tokyo').style.fontWeight = 'normal';document.getElementById('paris').style.fontWeight = 'normal';
+  		$('#photo').attr('src','images/seoul.png');
+  		$('#seoul').css('font-weight','bold');
+  		$('#tokyo').css('font-weight','normal');
+  		$('#paris').css('font-weight','normal');
+  		$('#home').css('font-weight','normal');
+  	}
+  	//사진에 그림자
+  	function mouseEnterPhoto{
+  		$('#photo').css('box-shadow','5px 10px');
+  	}
+  	function mouseLeavePhoto{
+  		$('#photo').css('box-shadow','none');
+  	}
+ 
+  </script>
+</body>
+</html>
