@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Travel Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<img src="images/logo.png" id="logo">
+ <div>
+   <p><a id="home" onclick="document.getElementById('photo').src = 'images/home.png';" class="menu">Home</a> 
+   <a id="seoul" onclick="clickSeoul();">Seoul</a>
+   <a id="tokyo"onclick="document.getElementById('photo').src = 'images/tokyo.png';"class="menu">tokyo</a>
+   <a id="paris"onclick="document.getElementById('photo').src = 'images/paris.png';"class="menu">paris</a>
+   </p>
+   </div>
+
+  <img id="photo" src="images/home.png" width="90%" onmouseenter="mouseEnterPhoto();" onmouseleave="mouseLeavePhoto();">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+  	//사진을 바꿔주는 함수
+  	function clickSeoul(){
+  		//document.getElementById('photo').src = 'images/seoul.png';
+  		//document.getElementById('seoul').style.fontWeight = 'bold';
+  		//document.getElementById('home').style.fontWeight = 'normal';
+  		//document.getElementById('tokyo').style.fontWeight = 'normal';document.getElementById('paris').style.fontWeight = 'normal';
+  		$('#photo').attr('src','images/seoul.png');
+  		$('#seoul').css('font-weight','bold');
+  		$('#tokyo').css('font-weight','normal');
+  		$('#paris').css('font-weight','normal');
+  		$('#home').css('font-weight','normal');
+  	}
+  	//사진에 그림자
+  	function mouseEnterPhoto{
+  		$('#photo').css('box-shadow','5px 10px');
+  	}
+  	function mouseLeavePhoto{
+  		$('#photo').css('box-shadow','none');
+  	}
+ 
+  </script>
+</body>
+</html>
