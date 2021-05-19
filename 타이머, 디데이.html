@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>20191770 이유진 컴퓨터학과 3학년</title>
+</head>
+<body>
+    <div id='digClock'></div>
+<script>
+    const christmas = new Date(2021,11,25); //달은 -1 해 주어야 함
+    const thisDay = new Date();
+    var gap = christmas.getTime()-thisDay.getTime();
+    var result= Math.ceil(gap/(1000*60*60*24))
+
+    function digClock(){
+        var today=new Date();
+        var day=today.getMonth()+1+'월'+ today.getDate()+'일';
+        var time=today.getHours()+'시'+today.getMinutes()+'분'+today.getSeconds()+'초';
+        
+        document.getElementById("digClock").innerHTML=day+time;
+        setTimeout('digClock()',1000);
+    }
+    digClock();
+    document.getElementById('digClock').style.border = '1px solid blue';
+    document.getElementById('digClock').style.width = '200px';
+    document.getElementById('digClock').style.height = '50px';
+    document.getElementById('digClock').style.paddingTop = '20px';
+    document.getElementById('digClock').style.paddingLeft = '20px';
+    document.write('크리스마스가 오늘부터 '+result+'남았습니다' )
+</script>
+</body>
+</html>

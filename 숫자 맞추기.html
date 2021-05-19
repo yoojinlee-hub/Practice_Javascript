@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>20191770 이유진 컴퓨터학과 3학년</title>
+</head>
+<body>
+    <h1>숫자 맞추기 게임</h1>
+    <hr>
+    <p id='var'>컴퓨터가 생성한 수:</p>
+<script>
+    var number=parseInt(prompt('수를 맞춰보세요'));
+    dice(number);
+    
+    function dice(n){
+        var randomNum = Math.floor((Math.random()*100)+1);
+
+       if(n>randomNum)
+            alert('더 작은 수를 입력하시오');
+       else if(n<randomNum)
+            alert('더 큰 수를 입력하시오');
+        
+            
+        document.getElementById('var').innerHTML= "<h2>정답입니다</h2>"+"<br>"+randomNum;
+    }
+    
+</script>
+</body>
+</html>
